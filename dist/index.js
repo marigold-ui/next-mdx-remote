@@ -24,6 +24,7 @@ if (typeof window !== 'undefined') {
     }
 }
 
+const MDXProvider = mdx.MDXProvider
 /**
  * Renders compiled source from next-mdx-remote/serialize.
  */
@@ -80,13 +81,12 @@ function MDXRemote({
   // wrapping the content with MDXProvider will allow us to customize the standard
   // markdown components (such as "h1" or "a") with the "components" object
   const content = React.createElement(
-    mdx.MDXProvider,
+    MDXProvider,
     { components: components },
     React.createElement(Content, null)
   )
   // If lazy = true, we need to render a wrapping div to preserve the same markup structure that was SSR'd
   return lazy ? React.createElement('div', null, content) : content
 }
-const MDXProvider = mdx.MDXProvider
 
 export { MDXProvider, MDXRemote }

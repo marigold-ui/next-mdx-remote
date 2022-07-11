@@ -33,6 +33,7 @@ export declare type MDXRemoteProps = MDXRemoteSerializeResult & {
   lazy?: boolean
 }
 export { MDXRemoteSerializeResult }
+export declare const MDXProvider: typeof mdx.MDXProvider
 /**
  * Renders compiled source from next-mdx-remote/serialize.
  */
@@ -43,4 +44,3 @@ export declare function MDXRemote({
   components,
   lazy,
 }: MDXRemoteProps): JSX.Element
-export declare const MDXProvider: typeof mdx.MDXProvider
